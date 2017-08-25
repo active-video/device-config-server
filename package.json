@@ -1,0 +1,32 @@
+{
+  "name": "device-config-server",
+  "version": "1.0.0",
+  "description": "A low scale device configuration server, allows for standard CRUD operations against /device and relies on a filesystem based JSON database for fewer points of failure (in terms of explaining to someone how to configure it).",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/active-video/device-config-server.git"
+  },
+  "keywords": [
+    "crud",
+    "json",
+    "store",
+    "crud",
+    "json"
+  ],
+  "author": "ActiveVideo",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/active-video/device-config-server/issues"
+  },
+  "homepage": "https://github.com/active-video/device-config-server#readme",
+  "dependencies": {
+    "cli-color": "^1.2.0",
+    "express": "^4.15.4",
+    "restafary": "^3.0.0"
+  }
+}

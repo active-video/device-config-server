@@ -1,11 +1,5 @@
-# A Simple Device Configuration Server
-This is intended for a small number of devices where it makes sense to expose their configuration over a RESTful API. 
+#!/usr/bin/env bash
 
-## Installation
-
-To install, run the following commands:
-
-```bash
 # Run as root, otherwise you will need to sudo the "npm install -g pm2"
 
 #This will override your NODE version
@@ -13,6 +7,7 @@ curl --silent --location https://rpm.nodesource.com/setup_7.x | sudo bash -;
 yum -y install nodejs
 
 npm install -g pm2; #this will be used to daemonize the service
+pm2 install pm2-logrotate;
 rm -rf /opt/device-config-server; #where the new version will be installed
 mkdir -p /opt; #make the directory if it doesn't exist
 
@@ -27,6 +22,4 @@ then
     echo "pm2 start /opt/device-config-server/index.js" >> /etc/rc.local;
 fi;
 
-pm2 start /opt/device-config-server/index.js;
-
-``` 
+pm2 start /opt/device-co nfig-server/index.js --merge-logs -l /var/log/device-config-server.log;
