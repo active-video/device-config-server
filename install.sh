@@ -7,6 +7,7 @@ curl --silent --location https://rpm.nodesource.com/setup_7.x | sudo bash -;
 yum -y install nodejs
 
 npm install -g pm2; #this will be used to daemonize the service
+pm2 install pm2-logrotate;
 rm -rf /opt/device-config-server; #where the new version will be installed
 mkdir -p /opt; #make the directory if it doesn't exist
 
@@ -21,4 +22,4 @@ then
     echo "pm2 start /opt/device-config-server/index.js" >> /etc/rc.local;
 fi;
 
-pm2 start /opt/device-config-server/index.js;
+pm2 start /opt/device-co nfig-server/index.js --merge-logs -l /var/log/device-config-server.log;
