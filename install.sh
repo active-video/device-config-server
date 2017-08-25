@@ -1,11 +1,5 @@
-# A Simple Device Configuration Server
-This is intended for a small number of devices where it makes sense to expose their configuration over a RESTful API. 
+#!/usr/bin/env bash
 
-## Installation
-
-To install, run the following commands:
-
-```bash
 # Run as root, otherwise you will need to sudo the "npm install -g pm2"
 
 #This will override your NODE version
@@ -28,5 +22,3 @@ then
 fi;
 
 pm2 start /opt/device-config-server/index.js;
-
-``` 
