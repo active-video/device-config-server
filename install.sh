@@ -34,6 +34,11 @@ pm2 start /opt/device-config-server/index.js --merge-logs -l /var/log/device-con
 
 #Verify that it works
 
-curl --request PUT -d "{\"This is\": \"JSON\"}" http://127.0.0.1:8299/device/installtest; #Should print out:   save: ok("installtest")
-curl http://127.0.0.1:8299/device/installtest; #Shuld print out the JSON:    {"This is": "JSON"}
-curl --request DELETE http://127.0.0.1:8299/device/installtest; #Shuld print out:   delete: ok("installtest")
+#Should print out:   save: ok("installtest")
+curl --request PUT -d "{\"This is\": \"JSON\"}" http://127.0.0.1:8299/device/installtest;
+
+#Should print out the JSON:    {"This is": "JSON"}
+curl http://127.0.0.1:8299/device/installtest;
+
+#Should print out:   delete: ok("installtest")
+curl --request DELETE http://127.0.0.1:8299/device/installtest;
